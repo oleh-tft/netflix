@@ -4,7 +4,7 @@ function App() {
   return (
     <div>
       <div>add my branch</div>
-      <div>Arinajjjjjjjjjjjjjjj</div>
+      <div>Arinajjjjjjjjjjjhhhhhjjjj</div>
     <div>netflix 🎈</div>
     </div>
   );
