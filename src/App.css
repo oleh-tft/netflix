@@ -10,6 +10,6 @@
        url('fonts/GraphikTH-Bold.woff2') format('woff2')
 }
 
-div {
+.div {
   font-family: GraphikTH, sans-serif;
 }

@@ -6,9 +6,7 @@
 .bg {
     position: absolute;
     z-index: -1;
-}
-
-.bgfit {
+    background: url('assets/netflix1.png');
 }
 
 .bggrad {
