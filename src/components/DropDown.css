@@ -1,0 +1,10 @@
+.comp {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    border: 1px solid #808080;
+    border-radius: 10px;
+    height: 32px;
+    display: flex;
+    padding: 6px;
+}

@@ -1,0 +1,7 @@
+#head {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding: 1% 6%;
+    border: 1px solid wheat;
+}
