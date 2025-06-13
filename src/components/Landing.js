@@ -6,9 +6,9 @@ export function Landing() {
 
     return (
         <div id="landing">
-            <div className="bg">
-                <Header></Header>
-            </div>
+            <div className="bg"></div>
+            <div className="faded"></div>
+            <Header></Header>
         </div>
     );
 
