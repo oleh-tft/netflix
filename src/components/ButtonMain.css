@@ -1,0 +1,18 @@
+.red {
+    border: 0;
+    cursor: pointer;
+    fill: currentColor;
+    position: relative;
+    transition-duration: 250ms;
+    transition-property: background-color,border-color;
+    transition-timing-function: cubic-bezier(0.4,0,0.68,0.06);
+    vertical-align: text-top;
+    width: auto;
+    font-size: 0.875rem;
+    font-weight: 500;
+    min-height: 2rem;
+    padding: 0.25rem 1rem;
+    border-radius: 0.25rem;
+    background: #e50914;
+    color: rgb(255,255,255);
+}
