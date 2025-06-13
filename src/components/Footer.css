@@ -1,0 +1,45 @@
+.titlefooter
+{
+    margin-left: 8%;
+
+  color: #ffffff;
+    font-family: Inter;
+    font-size: 24px;
+    margin-bottom: 77px;
+}
+
+footer{
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    padding: 2% 0;
+    padding: 144px 0px;
+}
+#foot
+{
+    margin-left: 8%;
+
+    width:80%;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10%;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 16px;
+}
+
+ul li a {
+    color: #ffffff;
+    font-family: Inter;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
