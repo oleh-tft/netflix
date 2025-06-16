@@ -43,3 +43,8 @@ ul li a {
 ul li a:hover {
     text-decoration: underline;
 }
+footer {
+    background-color: black;
+    position: relative;
+    height: 100%;
+}

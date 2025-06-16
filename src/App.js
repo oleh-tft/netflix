@@ -5,9 +5,9 @@ function App() {
   return (
     <div>
       <Landing></Landing>
-      <div>add my branch</div>
+      {/* <div>add my branch</div>
       <div>Yohoooo</div>
-    <div>netflix 🎈</div>
+    <div>netflix 🎈</div> */}
     </div>
   );
 }
