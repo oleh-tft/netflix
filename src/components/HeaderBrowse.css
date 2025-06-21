@@ -1,0 +1,23 @@
+#header-browse {
+    display: flex;
+    background-color: black;
+    padding: 1rem;
+    align-items: center;
+}
+
+.browse-logo {
+    display: flex;
+    margin: 0 2.8rem;
+    width: 5.5rem;
+}
+
+.browse-nav a {
+    text-decoration: none;
+    color: #e5e5e5;
+    margin: 0 0.5rem;
+}
+
+a.active {
+  color: #ffffff;
+  font-weight: bold;
+}
