@@ -27,6 +27,12 @@
     z-index: 2;
     width: 100%;
 }
-.FAQ{
+
+.FAQ {
     background-color: black;
+}
+
+.maintext-container {
+    margin-left: 35%;
+    width: 30%;
 }
