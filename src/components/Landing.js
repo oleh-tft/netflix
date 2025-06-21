@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
-import { Header } from "./Header";
+import { HeaderLanding } from "./HeaderLanding";
 import { Footer } from "./Footer";
 import { ButtonMain } from "./ButtonMain";
 
@@ -17,7 +17,7 @@ export function Landing() {
             <div id="landing">
                 <div className="bg"></div>
                 <div className="faded"></div>
-                <Header></Header>
+                <HeaderLanding></HeaderLanding>
             </div>
             <main>
                 <div style={{paddingTop: "10%", paddingBottom: "15%"}}>

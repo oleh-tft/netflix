@@ -1,9 +1,9 @@
 import Dropdown from 'react-bootstrap/Dropdown';
 import React from "react";
 import { useTranslation } from 'react-i18next';
-import './DropDown.css'
+import './DropDownLanguage.css'
 
-export function DropDown(props) {
+export function DropDownLanguage(props) {
 
     const { i18n } = useTranslation();
 
