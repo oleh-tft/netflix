@@ -4,12 +4,13 @@
 }
 
 .comp {
+    appearance: none;
     font-size: 1rem;
     font-weight: 400;
     color: rgb(255, 255, 255);
     border: 1px solid #808080;
     border-radius: 4px;
-    height: 32px;
+    height: 36px;
     display: flex;
     padding: 6px;
     background: none;
