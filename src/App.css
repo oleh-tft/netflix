@@ -5,13 +5,15 @@
 }
 
 @font-face {
-  font-family: GraphikTH;
-  src: url('fonts/GraphikTH-Bold.woff') format('woff'),
-       url('fonts/GraphikTH-Bold.woff2') format('woff2')
+  font-family: 'Netflix Sans';
+  src: url('fonts/Netflix\ Sans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-.div {
-  font-family: GraphikTH, sans-serif;
+body {
+  font-family: 'Netflix Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .btn-primary {
