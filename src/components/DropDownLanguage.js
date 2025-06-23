@@ -13,17 +13,11 @@ export function DropDownLanguage(props) {
     
     return (
         <div className='formwrapper'>
-            <select name='langselect' className='comp' style={{minWidth: props.minWidth}} onChange={(e) => setLanguage(e.target.value)} value={i18n.language}>
+            <select name='langselect' className='comp' style={{minWidth: props.minWidth, backgroundColor: props.bgColor}} onChange={(e) => setLanguage(e.target.value)} value={i18n.language}>
                 <option lang="en" label="English" value="en">English</option>
                 <option lang="uk" label="Українська" value="uk">Українська</option>
             </select>
         </div>
-        
-        // <div className="comp">
-        //     <img src={props.img}/>
-        //     <span>{props.text}</span>
-        //     <div className="arrow">\/</div>
-        // </div>
     );
 
 }
