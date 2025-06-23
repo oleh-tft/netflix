@@ -10,7 +10,7 @@ export function Emailinput() {
   return (
     <div style={{ width: "70%" }}>
       <FloatingLabel controlId="floatingInput" label={t('landing.input.1')} className="mb-3">
-        <Form.Control type="email" placeholder="name@example.com" />
+        <Form.Control type="email" placeholder="" />
       </FloatingLabel>
     </div>
   );

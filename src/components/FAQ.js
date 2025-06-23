@@ -1,11 +1,16 @@
 
 import React, { useState } from "react";
 import "./FAQ.css";
-import { ButtonMain } from "./ButtonMain";
+import { ButtonSVG } from "./ButtonSVG";
 import { Emailinput } from "./Emailinput";
+import { AccordionMain } from "./AccordionMain";
 
-export function FAQSection(){
-    const [openIndex, setOpenIndex] = useState(null);
+import { useTranslation } from 'react-i18next';
+
+export function FAQSection() {
+
+  const { t } = useTranslation();
+  const rightArrow = 'M15.5859 12L8.29303 19.2928L9.70725 20.7071L17.7072 12.7071C17.8948 12.5195 18.0001 12.2652 18.0001 12C18.0001 11.7347 17.8948 11.4804 17.7072 11.2928L9.70724 3.29285L8.29303 4.70706L15.5859 12Z'
 
   const faqItems = [
     {
@@ -38,62 +43,21 @@ export function FAQSection(){
     }
   ];
 
-  const toggle = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-    return(
-              <main style={{ maxWidth: "960px", margin: "0 auto", padding: "60px 20px" }}>
-        <h1 style={{
-            color: "white",
-          fontSize: "2.5rem",
-          textAlign: "center",
-          fontWeight: "700",
-          marginBottom: "40px"
-        }}>
-          Frequently Asked Questions
-        </h1>
-
-<section>
-          {faqItems.map((item, index) => (
-            <div key={index} style={{ backgroundColor: "#303030", marginBottom: "8px" }}>
-              <button
-                onClick={() => toggle(index)}
-                style={{
-                  width: "100%",
-                  background: "none",
-                  border: "none",
-                  padding: "24px",
-                  fontSize: "1.5rem",
-                  fontWeight: "500",
-                  color: "white",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  cursor: "pointer"
-                }}
-              >
-                {item.q}
-                <span style={{ fontSize: "2rem" }}>{openIndex === index ? "−" : "+"}</span>
-              </button>
-              {openIndex === index && (
-                <div style={{ padding: "0 24px 24px", fontSize: "1.1rem", color: "#ddd" }}>
-                  {item.a}
-                </div>
-              )}
-            </div>
-          ))}
+  return(
+    <main id="faq-main">
+      <div id="acc-wrapper">
+        <h1 id="faq-text-questions">Frequently Asked Questions</h1>
+        <section style={{width: '100%'}}>
+          <AccordionMain items={faqItems}/>
         </section>
-
-         <div style={{ textAlign: "center", marginTop: "40px" }}>
-          <p style={{ color: "white", fontSize: "1.1rem", marginBottom: "20px" }}>
-          Ready to watch? Enter your email to create or restart your membership.
-          </p>
-          <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "10px" }}>
-      <Emailinput/>
-               <ButtonMain color="red" text="Get Started"></ButtonMain>
-          </div>
+      </div>
+      <div style={{ textAlign: "center", marginTop: "4rem", width: "50vw"}}>
+        <p style={{ color: "white", fontSize: "1rem", marginBottom: "1rem" }}>Ready to watch? Enter your email to create or restart your membership.</p>
+        <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "10px" }}>
+          <Emailinput/>
+          <ButtonSVG color="red" text={t('landing.button.1')} d={rightArrow}></ButtonSVG>
         </div>
-      </main>
-    );
+      </div>
+    </main>
+  );
 }

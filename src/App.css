@@ -6,14 +6,49 @@
 
 @font-face {
   font-family: 'Netflix Sans';
-  src: url('fonts/Netflix\ Sans.woff2') format('woff2');
+  src: url('fonts/NetflixSans_W_Th.woff2') format('woff2');
+  font-weight: 100;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Netflix Sans';
+  src: url('fonts/NetflixSans_W_Lt.woff2') format('woff2');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Netflix Sans';
+  src: url('fonts/NetflixSans_W_Rg.woff2') format('woff2');
   font-weight: normal;
-  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Netflix Sans';
+  src: url('fonts/NetflixSans_W_Md.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Netflix Sans';
+  src: url('fonts/NetflixSans_W_Bd.woff2') format('woff2');
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Netflix Sans';
+  src: url('fonts/NetflixSans_W_Blk.woff2') format('woff2');
+  font-weight: 900;
   font-display: swap;
 }
 
 body {
-  font-family: 'Netflix Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+  background-color: black;
 }
 
 .btn-primary {
@@ -31,8 +66,4 @@ body {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #0d6efd;
   --bs-btn-disabled-border-color: #0d6efd;
-}
-
-.btn-info {
-  
 }
