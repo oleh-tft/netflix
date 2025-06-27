@@ -1,49 +1,47 @@
 #login {
   position: relative;
   min-height: 100vh;
-  overflow-y: auto; 
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-y: auto;
   color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
 
-   
+.login-mb-1 {
+  margin-top: 1rem;
 }
 
 .bg {
-  background: url('assets/netflix1.png') center center / cover no-repeat;
+  background: url('assets/netflix1.png');
   position: absolute;
   inset: 0;
   z-index: -3;
-  
 }
 
-.faded {
-  background-color: rgba(0, 0, 0, 0.75);
+.login-faded {
+  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   inset: 0;
   z-index: -2;
 }
 
 .bggrad {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.7889) 8.33%,
-    rgba(0, 0, 0, 0.7556) 16.67%,
-    rgba(0, 0, 0, 0.7) 25%,
-    rgba(0, 0, 0, 0.6222) 33.33%,
-    rgba(0, 0, 0, 0.5222) 41.67%,
-    rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0.2778) 58.33%,
-    rgba(0, 0, 0, 0.1778) 66.67%,
-    rgba(0, 0, 0, 0.1) 75%,
-    rgba(0, 0, 0, 0.04444) 83.33%,
-    rgba(0, 0, 0, 0.01111) 91.67%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.7889) 8.33%,
+      rgba(0, 0, 0, 0.7556) 16.67%,
+      rgba(0, 0, 0, 0.7) 25%,
+      rgba(0, 0, 0, 0.6222) 33.33%,
+      rgba(0, 0, 0, 0.5222) 41.67%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.2778) 58.33%,
+      rgba(0, 0, 0, 0.1778) 66.67%,
+      rgba(0, 0, 0, 0.1) 75%,
+      rgba(0, 0, 0, 0.04444) 83.33%,
+      rgba(0, 0, 0, 0.01111) 91.67%,
+      rgba(0, 0, 0, 0) 100%);
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -63,7 +61,7 @@
 }
 
 .login-box {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 60px 68px 40px;
   border-radius: 4px;
   max-width: 450px;
@@ -71,24 +69,12 @@
   z-index: 1;
   margin-top: 12%;
   margin-bottom: 12%;
-
-
 }
 
 .login-form h1 {
   font-size: 2rem;
   margin-bottom: 24px;
-}
-
-.login-fields input {
-  width: 100%;
-  padding: 16px;
-  margin-bottom: 16px;
-  background: #333;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  font-size: 1rem;
+  font-weight: 700;
 }
 
 .login-fields input::placeholder {
@@ -97,20 +83,10 @@
 
 .login-form button {
   width: 100%;
-  padding: 16px;
-  background-color: #e50914;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
+  padding: 0.5rem 1rem;
   font-weight: 700;
-  color: white;
-  cursor: pointer;
   margin-top: 12px;
   margin-bottom: 16px;
-}
-
-.login-form button:hover {
-  background-color: #f6121d;
 }
 
 .login-options {
@@ -149,8 +125,25 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: black;
   color: white;
   padding: 20px 0;
   z-index: 10;
+  border-top: 1px solid #333;
+  background-color: rgb(22, 22, 22);
+}
+
+.invalid-feedback {
+  font-size: 0.775rem;
+  font-weight: 400;
+}
+
+.invalid-feedback img {
+  margin-right: 0.4vw;
+}
+
+input[type="checkbox"] {
+  border-radius: 0.125rem;
+  height: 1.125rem;
+  width: 1.125rem;
+  margin-right: 0.6rem;
 }

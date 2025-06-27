@@ -1,10 +1,12 @@
 import React, { useState, useRef } from 'react';
 import './SliderItem.css';
+import { ItemDescription } from './ItemDescription';
 
 export function SliderItem(props) {
     const [hovered, setHovered] = useState(false);
     const [expand, setExpand] = useState({class: ''});
     const [origin, setOrigin] = useState('center center');
+    const [modalShow, setModalShow] = React.useState(false);
 
     const enterTimeout = useRef(null);
     const leaveTimeout = useRef(null);
@@ -58,7 +60,7 @@ export function SliderItem(props) {
                   <div className='slider-item-btn item-btn-gray'><img src='plus-icon.svg'/></div>
                   <div className='slider-item-btn item-btn-gray'><img src='like-icon.svg'/></div>
                 </div>
-                <div className='slider-item-btn item-btn-gray'><img src='arrow-down-icon.svg'/></div>
+                <div className='slider-item-btn item-btn-gray' onClick={() => setModalShow(true)}><img src='arrow-down-icon.svg'/></div>
               </div>
               <div className='item-info'>
                 <div className='info-maturity'>{props.maturity}</div>
@@ -74,6 +76,7 @@ export function SliderItem(props) {
               </div>
             </div>
           </div>
+          <ItemDescription show={modalShow} onHide={() => setModalShow(false)}/>
         </div>
     );
 }
