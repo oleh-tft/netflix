@@ -4,7 +4,7 @@ import './ButtonMain.css';
 export function ButtonMain(props) {
 
     return (
-        <Button className={props.color} style={{minWidth: props.minWidth}} onClick={props.onClick}>{props.text}</Button>
+        <Button type={props.type} className={props.color} style={{minWidth: props.minWidth}} onClick={props.onClick}>{props.text}</Button>
     );
 
 }

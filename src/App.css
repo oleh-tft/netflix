@@ -67,3 +67,11 @@ body {
   --bs-btn-disabled-bg: #0d6efd;
   --bs-btn-disabled-border-color: #0d6efd;
 }
+
+.invalid-feedback {
+  --bs-form-invalid-color: #eb3942;
+}
+
+.form-control:invalid {
+  --bs-form-invalid-border-color: #eb3942;
+}
