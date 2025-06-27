@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import { SliderItem } from './SliderItem';
 import './Slider.css'
+import { useWindowDimensions } from './useWindowDimensions';
 
 export function Slider (props) {
+  const sizes = [
+    { width: 0, items: 2 },
+    { width: 500, items: 3 },
+    { width: 800, items: 4 },
+    { width: 1100, items: 5 },
+    { width: 1400, items: 6 },
+  ];
+
+  const { height, width } = useWindowDimensions();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
-  const itemsPerPage = 6;
+  const itemsPerPage = sizes.filter(size => width >= size.width).pop()?.items || 2;
   const totalPages = Math.ceil(props.items.length / itemsPerPage);
+  // console.log(`w: ${width}   h: ${height}`)
 
   const handleNext = () => {
     const nextIndex = currentIndex + itemsPerPage;
@@ -46,11 +57,11 @@ export function Slider (props) {
   const handleSwipe = () => {
     const distance = touchStartX - touchEndX;
 
-    if (Math.abs(distance) > 50) { // Minimum swipe distance
+    if (Math.abs(distance) > 50) {
       if (distance > 0) {
-        handleNext(); // Swipe left → next
+        handleNext();
       } else {
-        handlePrev(); // Swipe right → prev
+        handlePrev();
       }
     }
   };
@@ -58,7 +69,7 @@ export function Slider (props) {
   const translateX = `-${(currentIndex / itemsPerPage) * (100 / totalPages)}%`;
 
   return (
-    <div className='slider-cont-wrap'>
+    <div className='slider-cont-wrap' style={{zIndex: `${hovered ? 50 : 6}`}}>
       <div className='slider-head'>
         <div>{props.title}</div>
         <ul className='page-indicator'>
