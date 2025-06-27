@@ -1,11 +1,10 @@
 .slider-item-wrapper {
-  position: relative;
   width: 16.6%;
-  height: 10px;
+  height: 100%;
+  position: relative;
 }
 
 .slider-item-preview {
-  position: absolute;
   border-radius: .2vw;
   width: 100%;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 8px 0px;
@@ -28,16 +27,14 @@
   transform: scale(1.4);
   transition: 0.3s all;
   transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
-  z-index: 6;
 }
 
 .slider-item-preview--leave {
   opacity: 1;
   display: block;
   transform: scale(1);
-  transition: 0.3s all;
+  transition: 0.1s all;
   transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
-  z-index: 6;
 }
 
 .item-desc-container {

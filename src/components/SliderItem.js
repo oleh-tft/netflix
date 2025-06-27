@@ -2,35 +2,54 @@ import React, { useState, useRef } from 'react';
 import './SliderItem.css';
 
 export function SliderItem(props) {
+    const [hovered, setHovered] = useState(false);
     const [expand, setExpand] = useState({class: ''});
+    const [origin, setOrigin] = useState('center center');
 
     const enterTimeout = useRef(null);
     const leaveTimeout = useRef(null);
 
-    function handleMouseEnter() {
+    function handleMouseEnter(e) {
+        const rect = e.currentTarget.getBoundingClientRect();
+
+        let originX = 'center';
+        let originY = 'center';
+
+        if (rect.left < 200) {
+          originX = 'left';
+        } else if (window.innerWidth - rect.right < 200) {
+          originX = 'right';
+        }
+
+        if (rect.top < 300) {
+          originY = 'top';
+        } else if (window.innerHeight - rect.bottom < 300) {
+          originY = 'bottom';
+        }
+        setOrigin(`${originX} ${originY}`);
+
         if (enterTimeout.current) clearTimeout(enterTimeout.current);
         enterTimeout.current = setTimeout(() => {
+            setHovered(true);
             setExpand({class: 'slider-item-preview--enter'});
         }, 500);
     };
 
     function handleMouseLeave () {
         if (leaveTimeout.current) clearTimeout(leaveTimeout.current);
+
         leaveTimeout.current = setTimeout(() => {
             setExpand({class: 'slider-item-preview--leave'});
             setTimeout(() => {
                 setExpand({class: ''});
+                setHovered(false);
             }, 200)
         }, 300);
     };
 
-    function hovered() {
-      return expand.class === 'slider-item-preview--enter';
-    }
-
     return (
-        <div className={`slider-item-wrapper`}>
-          <div className={`slider-item-preview ${expand.class}`} onMouseEnter={() => handleMouseEnter()} onMouseLeave={() => handleMouseLeave()}>
+        <div className={`slider-item-wrapper`} style={{zIndex: `${hovered ? 50 : 6}`}}>
+          <div style={{transformOrigin: `${origin}`}} className={`slider-item-preview ${expand.class}`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <img src={props.img}/>
             <div className='item-desc-container'>
               <div className='item-btn-container'>
@@ -56,6 +75,5 @@ export function SliderItem(props) {
             </div>
           </div>
         </div>
-        
     );
 }
