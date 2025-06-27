@@ -1,10 +1,24 @@
 #header-browse {
-    display: flex;
-    background-color: black;
     padding: 1rem;
-    align-items: center;
-}
+     position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.6) 20%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.01) 100%
+  );
 
+  color: white;
+  transition: all 0.5s ease; 
+  pointer-events: auto;
+}
 .browse-logo {
     display: flex;
     margin: 0 2.8rem;
@@ -20,4 +34,9 @@
 a.active {
   color: #ffffff;
   font-weight: bold;
+}
+
+
+#header-browse.scrolled {
+  background: black;
 }

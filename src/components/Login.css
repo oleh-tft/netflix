@@ -1,0 +1,156 @@
+#login {
+  position: relative;
+  min-height: 100vh;
+  overflow-y: auto; 
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+   
+}
+
+.bg {
+  background: url('assets/netflix1.png') center center / cover no-repeat;
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  
+}
+
+.faded {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.bggrad {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.7889) 8.33%,
+    rgba(0, 0, 0, 0.7556) 16.67%,
+    rgba(0, 0, 0, 0.7) 25%,
+    rgba(0, 0, 0, 0.6222) 33.33%,
+    rgba(0, 0, 0, 0.5222) 41.67%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.2778) 58.33%,
+    rgba(0, 0, 0, 0.1778) 66.67%,
+    rgba(0, 0, 0, 0.1) 75%,
+    rgba(0, 0, 0, 0.04444) 83.33%,
+    rgba(0, 0, 0, 0.01111) 91.67%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.login-logo {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  z-index: 2;
+  display: block;
+}
+
+.login-logo svg,
+.login-logo img {
+  height: 45px;
+}
+
+.login-box {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 60px 68px 40px;
+  border-radius: 4px;
+  max-width: 450px;
+  width: 100%;
+  z-index: 1;
+  margin-top: 12%;
+  margin-bottom: 12%;
+
+
+}
+
+.login-form h1 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.login-fields input {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 16px;
+  background: #333;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+}
+
+.login-fields input::placeholder {
+  color: #8c8c8c;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 16px;
+  background-color: #e50914;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+.login-form button:hover {
+  background-color: #f6121d;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: #b3b3b3;
+  margin-bottom: 20px;
+}
+
+.login-options a {
+  color: #b3b3b3;
+  text-decoration: none;
+}
+
+.login-signup p {
+  font-size: 0.9rem;
+  color: #737373;
+  margin-bottom: 10px;
+}
+
+.login-signup a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-note {
+  font-size: 0.75rem;
+  color: #8c8c8c;
+  line-height: 1.3;
+  margin-top: 10px;
+}
+
+.Footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+  z-index: 10;
+}
