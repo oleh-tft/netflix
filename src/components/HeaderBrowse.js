@@ -5,6 +5,7 @@ import { Logo } from './Logo';
 export function HeaderBrowse() {
     return (
         <div>
+            <div className="bggrad-br"></div>
             <div id='header-browse'>
                 <div className='browse-logo'>
                     <Logo></Logo>
