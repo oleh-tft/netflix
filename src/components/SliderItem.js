@@ -76,7 +76,7 @@ export function SliderItem(props) {
               </div>
             </div>
           </div>
-          <ItemDescription show={modalShow} onHide={() => setModalShow(false)}/>
+          <ItemDescription show={modalShow} onHide={() => setModalShow(false)} imgbig={props.imgbig} year={props.year} age={props.maturity} duration={props.length} additional={props.additional} description={props.description}/>
         </div>
     );
 }

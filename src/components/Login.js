@@ -13,6 +13,7 @@ export function Login() {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+  let ers = {...errors}
 
   const validateEmailOrPhone = (value) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -25,28 +26,37 @@ export function Login() {
     return value.length >= 4 && value.length <= 60;
   };
 
+  const validate = (name) => {
+
+    if (name === 'email') {
+      if (!validateEmailOrPhone(emailOrPhone)) {
+        ers.emailOrPhone = 'Please enter a valid email or phone number.';
+      } else {
+        delete ers.emailOrPhone
+      }
+    } else if (name === 'password') {
+      if (!validatePassword(password)) {
+        ers.password = 'Your password must contain between 4 and 60 characters.';
+      } else {
+        delete ers.password
+      }
+    }
+    setErrors(ers);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    let formErrors = {};
+    validate('email');
+    validate('password');
 
-    if (!validateEmailOrPhone(emailOrPhone)) {
-      formErrors.emailOrPhone = 'Please enter a valid email or phone number.';
-    }
-
-    if (!validatePassword(password)) {
-      formErrors.password = 'Your password must contain between 4 and 60 characters.';
-    }
-
-    setErrors(formErrors);
-
-    if (Object.keys(formErrors).length === 0) {
+    if (Object.keys(ers).length === 0) {
       navigate('/browse');
     }
   };
 
   return (
     <div id="login">
-      <div className="bg"></div>
+      <div className="login-bg"></div>
       <div className="login-faded"></div>
       <div className="bggrad"></div>
 
@@ -64,14 +74,14 @@ export function Login() {
                   <Form.Control required type="text" placeholder="" value={emailOrPhone}
                     onChange={(e) => {
                       setEmailOrPhone(e.target.value);
-                      validateEmailOrPhone(e.target.value);
+                      validate('email');
                     }}
                     isInvalid={!!errors.emailOrPhone} />
                 </FloatingLabel>
                 <Form.Control.Feedback type="invalid" className="d-block">
                   {errors.emailOrPhone && (
                     <>
-                      <img src="invalid.svg"/>
+                      <img src="invalid.svg" />
                       {errors.emailOrPhone}
                     </>
                   )}
@@ -83,14 +93,14 @@ export function Login() {
                   <Form.Control required type="password" placeholder="" value={password}
                     onChange={(e) => {
                       setPassword(e.target.value);
-                      validatePassword(e.target.value);
+                      validate('password');
                     }}
                     isInvalid={!!errors.password} />
                 </FloatingLabel>
                 <Form.Control.Feedback type="invalid" className="d-block">
                   {errors.password && (
                     <>
-                      <img src="invalid.svg"/>
+                      <img src="invalid.svg" />
                       {errors.password}
                     </>
                   )}

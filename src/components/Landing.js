@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslation } from 'react-i18next';
 import { HeaderLanding } from "./HeaderLanding";
 import { Footer } from "./Footer";
-import { ButtonMain } from "./ButtonMain";
 
 import './Landing.css';
 import { FAQSection } from "./FAQ";
@@ -17,12 +16,12 @@ export function Landing() {
     return (
         <div>
             <div id="landing">
-                <div className="bg"></div>
+                <div className="bg" style={{backgroundImage: `url('${t('landing.bg')}')`}}></div>
                 <div className="faded"></div>
                 <div className="bggrad"></div>
                 <HeaderLanding></HeaderLanding>
             </div>
-            <main style={{marginTop: "10rem"}}>
+            <main style={{margin: "10rem 0"}}>
                 <div style={{minHeight: "55rem", display: "flex", justifyContent: "center"}}>
                     <div style={{color: "white", textAlign: "center", marginTop: "40px" }} className="maintext-container">
                         <h1 style={{ marginBottom: "20px", fontSize: "3.5rem", fontWeight: "900" }}>{t('landing.text.1')}</h1>
