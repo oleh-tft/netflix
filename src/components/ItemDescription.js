@@ -7,7 +7,7 @@ export function ItemDescription(props) {
         <Modal {...props} centered>
             <div className='desc-head-wrap'>
                 <div className='description-bg'>
-                    <img src='sample1_desc.jpg' />
+                    <img src={props.imgbig} />
                     <div className='desc-img-fade'></div>
                 </div>
                 <Modal.Header closeButton></Modal.Header>
@@ -27,16 +27,16 @@ export function ItemDescription(props) {
                     <div className='desc-left'>
                         <div className='desc-left-wrap'>
                             <div className='desc-movie-meta'>
-                                <div className='mr-1 movie-year'>2023</div>
-                                <div className='mr-1 movie-duration'>1h 49m</div>
+                                <div className='mr-1 movie-year'>{props.year}</div>
+                                <div className='mr-1 movie-duration'>{props.duration}</div>
                                 <div className='mr-1 movie-feature'>HD</div>
                             </div>
                             <div className='desc-movie-info'>
-                                <div className='mr-1 movie-restriction'>16+</div>
-                                <div className='mr-1 movie-additional'>violence</div>
+                                <div className='mr-1 movie-restriction'>{props.age}</div>
+                                <div className='mr-1 movie-additional'>{props.additional}</div>
                             </div>
                         </div>
-                        <div className='desc-movie-text'>Mauris vel enim quis sapien faucibus feugiat. Suspendisse sed ligula ut ligula ultrices tristique. Etiam congue eros ac urna scelerisque, vel tempor ipsum imperdiet.</div>
+                        <div className='desc-movie-text'>{props.description}</div>
                     </div>
                     <div className='desc-right'>
                         <div className='desc-right-text'>

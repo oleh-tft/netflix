@@ -87,7 +87,7 @@ export function Slider (props) {
           <div className="slider-wrapper" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
             <div className="slider-track" style={{transform: `translateX(${translateX})`, width: `${(props.items.length / itemsPerPage) * 100}%`}}>
               {props.items.map((item, index) => (
-                <SliderItem key={index} img={item.src} genres={item.genres} maturity={'13+'} length={'1h 41m'} feature={'HD'}/>
+                <SliderItem key={index} img={item.imgsmall} imgbig={item.imgbig} genres={["Action", "Adventure", "Sci-Fi"]} year="2013" maturity="16+" length="5 Seasons" additional="violence, language, substances" description={item.description} feature={'HD'}/>
               ))}
             </div>
           </div>
