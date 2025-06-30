@@ -66,21 +66,25 @@ export function Slider (props) {
     }
   };
 
+  function hideAdditional() {
+    return totalPages === 1 ? 'd-none' : '';
+  }
+
   const translateX = `-${(currentIndex / itemsPerPage) * (100 / totalPages)}%`;
 
   return (
     <div className='slider-cont-wrap' style={{zIndex: `${hovered ? 50 : 6}`}}>
       <div className='slider-head'>
         <div>{props.title}</div>
-        <ul className='page-indicator'>
+        <ul className={`page-indicator ${hideAdditional()}`}>
           {Array.from({ length: totalPages }, (_, index) => (
             <li key={index} className={`indicator-li ${(index * itemsPerPage) === currentIndex ? 'active-page' : '' }`}></li>
           ))}
         </ul>
       </div>
-      <div className="slider-container" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
+      <div className={`slider-container ${totalPages === 1 ? 'one-page-padding' : ''}`} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
         <div className="slider-row">
-          <button onClick={handlePrev} className='slider-button slider-button-prev'>
+          <button onClick={handlePrev} className={`slider-button slider-button-prev ${hideAdditional()}`}>
             <img src='down-arrow-l.svg' style={{opacity: `${hovered ? 1 : 0}`}}/>
           </button>
 
@@ -92,7 +96,7 @@ export function Slider (props) {
             </div>
           </div>
 
-          <button onClick={handleNext} className='slider-button slider-button-next'>
+          <button onClick={handleNext} className={`slider-button slider-button-next ${hideAdditional()}`}>
             <img src='down-arrow-r.svg' style={{opacity: `${hovered ? 1 : 0}`}}/>
           </button>
         </div>
