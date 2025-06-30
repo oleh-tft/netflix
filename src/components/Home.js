@@ -13,6 +13,7 @@ export function Home() {
         title="The Brothers Sun"
         description="Created by Byron Wu and Emmy winner Brad Falchuk, this irreverent action series follows an immigrant family with criminal ties and deadly enemies in LA."
         ageLimit="16+"
+        year ="2023"
       />
     </div>
     <Footer></Footer>
