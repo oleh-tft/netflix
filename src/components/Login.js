@@ -13,7 +13,7 @@ export function Login() {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
-  let ers = {...errors}
+  let ers = { ...errors }
 
   const validateEmailOrPhone = (value) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -108,9 +108,10 @@ export function Login() {
               </Form.Group>
 
               <Button variant="primary" type="submit">Sign In</Button>
-              <div className='d-flex align-items-center'>
-                <input type="checkbox" /> <span>Remember me</span>
-              </div>
+              <label className='d-flex align-items-center'>
+                <input type="checkbox" />
+                <span>Remember me</span>
+              </label>
             </Form>
           </div>
 

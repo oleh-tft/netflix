@@ -2,9 +2,11 @@ import { NavLink, Outlet } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './HeaderBrowse.css'
 import { Logo } from './Logo';
+import { useNavigate } from 'react-router-dom';
 
 export function HeaderBrowse() {
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => {
@@ -17,7 +19,7 @@ export function HeaderBrowse() {
   return (
     <div id='header-browse' className={scrolled ? 'scrolled' : ''}>
       <div className='browse-logo'>
-        <Logo />
+        <Logo cursor="pointer" onClick={() => navigate('/browse')}/>
       </div>
       <nav className='browse-nav'>
         <NavLink to='/browse'>Home</NavLink>
